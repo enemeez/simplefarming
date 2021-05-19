@@ -11,7 +11,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 
-public class SeedItem extends BlockNamedItem {
+public class SeedItem extends BlockNamedItem
+{
 
 	public SeedItem(Block blockIn, Properties properties) {
 		super(blockIn, properties);
@@ -22,7 +23,7 @@ public class SeedItem extends BlockNamedItem {
 
 		ItemStack stack = player.getHeldItem(hand);
 
-		if (!entity.world.isRemote && !entity.isChild() && entity instanceof AgeableEntity && (int) ((AgeableEntity) entity).getGrowingAge() == 0) {
+		if (!entity.world.isRemote && !entity.isChild() && entity instanceof AgeableEntity && ((AgeableEntity) entity).getGrowingAge() == 0) {
 			if (entity instanceof ChickenEntity) {
 				if (((ChickenEntity) entity).isInLove()) {
 					return ActionResultType.FAIL;
